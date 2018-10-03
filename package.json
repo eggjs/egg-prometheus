@@ -1,0 +1,52 @@
+{
+  "name": "egg-prometheus",
+  "version": "1.0.0",
+  "description": "Prometheus plugin for Egg.js",
+  "main": "index.js",
+  "eggPlugin": {
+    "name": "prometheus"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggjs/egg-prometheus.git"
+  },
+  "keywords": [
+    "egg",
+    "prometheus",
+    "metrics"
+  ],
+  "author": "gxcsoccer <gxcsoccer@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eggjs/egg-prometheus/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-prometheus#readme",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "ci": {
+    "version": "8, 10"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg": "^2.11.2",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.9.2",
+    "eslint": "^5.6.1",
+    "eslint-config-egg": "^7.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  }
+}
