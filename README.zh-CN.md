@@ -1,5 +1,4 @@
 # egg-prometheus
-Prometheus plugin for egg framework
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -21,19 +20,19 @@ Prometheus plugin for egg framework
 [download-image]: https://img.shields.io/npm/dm/egg-prometheus.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-prometheus
 
-[Prometheus](https://prometheus.io) plugin for egg framework
+为 egg 提供 [Prometheus](https://prometheus.io) 功能支持
 
-## Install
+## 安装
 
 ```bash
 $ npm i egg-prometheus --save
 ```
 
-## Usage
+## 用法
 
-### Enable the plugin
+### 开启插件
 
-Change `${app_root}/config/plugin.js` to enable Prometheus plugin:
+通过 `${app_root}/config/plugin.js` 配置启动 Prometheus 插件:
 
 ```js
 exports.prometheus = {
@@ -42,7 +41,7 @@ exports.prometheus = {
 };
 ```
 
-### Configuration
+### 配置
 
 ```js
 exports.prometheus = {
@@ -52,29 +51,30 @@ exports.prometheus = {
 };
 ```
 
-- `scrapePort`: the port to scrape metrics from
-- `scrapePath`: the path to scrape metrics from
-- `defaultLabels`: static labels may be applied to every metric emitted by a registry
+- `scrapePort`: 监听的用于采集 metrics 的端口
+- `scrapePath`: 监听的采集 metrics 的服务路径
+- `defaultLabels`: 默认的 metrics 标签，全局生效
 
-## Default Metrics
+## 内置的 Metrics
 
-- `http_response_time_ms summary`: ms to handle a request
-- `http_request_rate counter`: number of requests to a route
+- `http_response_time_ms summary`: http 请求耗时
+- `http_request_rate counter`: http 请求数
 
-while egg-sofa-rpc is enabled
-- `sofa_rpc_consumer_response_time_ms summary`: ms of rpc time consuming
-- `sofa_rpc_consumer_request_rate counter`: number of rpc calls
-- `sofa_rpc_consumer_fail_response_time_ms summary`: ms of fail rpc time consuming
-- `sofa_rpc_consumer_request_fail_rate counter`: number of fail rpc calls
-- `sofa_rpc_consumer_request_size_bytes summary`: rpc request size in bytes
-- `sofa_rpc_consumer_response_size_bytes summary`: rpc response size in bytes
-- `sofa_rpc_provider_response_time_ms summary`: ms of request processed time
-- `sofa_rpc_provider_request_rate counter`: number of rpc calls
-- `sofa_rpc_provider_fail_response_time_ms summary`: ms of fail request processed time
-- `sofa_rpc_provider_request_fail_rate counter`: number of fail rpc calls
+当 egg-sofa-rpc 插件开启时，还会提供下面 metrics
+- `sofa_rpc_consumer_response_time_ms summary`: rpc 客户端请求耗时
+- `sofa_rpc_consumer_request_rate counter`: rpc 客户端请求数
+- `sofa_rpc_consumer_fail_response_time_ms summary`: rpc 客户端失败的请求耗时
+- `sofa_rpc_consumer_request_fail_rate counter`: rpc 客户端失败的请求数
+- `sofa_rpc_consumer_request_size_bytes summary`: rpc 请求大小统计
+- `sofa_rpc_consumer_response_size_bytes summary`: rpc 响应大小统计
+- `sofa_rpc_provider_response_time_ms summary`: rpc 服务端处理时间
+- `sofa_rpc_provider_request_rate counter`: rpc 服务端收到请求数
+- `sofa_rpc_provider_fail_response_time_ms summary`: rpc 服务端失败的请求处理时间
+- `sofa_rpc_provider_request_fail_rate counter`: rpc 服务端失败的请求数
 
-## Custom Metrics
+## 自定义 Metrics
 
+可以通过下面 API 自定义业务 metrics
 ```js
 const counter = new app.prometheus.Counter({
   name: 'xxx_total',
@@ -101,11 +101,11 @@ const summary = new app.prometheus.Summary({
 });
 ```
 
-## How to Contribute
+## 如何贡献
 
-Please let us know how can we help. Do check out [issues](https://github.com/eggjs/egg/issues) for bug reports or suggestions first.
+请告知我们可以为你做些什么，不过在此之前，请检查一下是否有[已经存在的Bug或者意见](https://github.com/eggjs/egg/issues)。
 
-To become a contributor, please follow our [contributing guide](https://github.com/eggjs/egg/blob/master/CONTRIBUTING.md).
+如果你是一个代码贡献者，请参考[代码贡献规范](CONTRIBUTING.md)。
 
 ## License
 
