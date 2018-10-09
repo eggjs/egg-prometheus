@@ -19,7 +19,7 @@
     "test-local": "egg-bin test",
     "cov": "sh test/init.sh && egg-bin cov",
     "lint": "eslint .",
-    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "ci": "npm run autod -- --check && egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod"
   },
@@ -51,10 +51,11 @@
     "egg-bin": "^4.9.0",
     "egg-mock": "^3.20.1",
     "egg-rpc-generator": "^1.0.0",
-    "egg-sofa-rpc": "^1.0.0",
+    "egg-sofa-rpc": "^1.0.1",
     "eslint": "^5.6.1",
     "eslint-config-egg": "^7.1.0",
     "mz-modules": "^2.1.0",
+    "urllib": "^2.30.0",
     "webstorm-disable-index": "^1.2.0"
   }
 }
