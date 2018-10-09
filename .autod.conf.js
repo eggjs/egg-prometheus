@@ -15,6 +15,7 @@ module.exports = {
     'autod-egg',
     'eslint',
     'eslint-config-egg',
+    'egg-rpc-generator',
     'webstorm-disable-index',
   ],
   exclude: [

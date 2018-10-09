@@ -60,3 +60,8 @@ typings/
 # next.js build output
 .next
 .idea
+zookeeper-3.4.6/
+test/fixtures/apps/**/app/public
+test/fixtures/apps/**/app/proxy
+test/fixtures/apps/**/run
+test/fixtures/apps/**/logs
