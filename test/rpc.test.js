@@ -61,5 +61,8 @@ describe('test/rpc.test.js', () => {
     console.log(metricsStr);
 
     assert(metricsStr.includes(`sofa_rpc_provider_request_fail_rate{service="com.alipay.sofa.rpc.protobuf.ProtoService:1.0",method="echoObj",protocol="bolt",caller_app="rpc-app",app="rpc-app",pid="${process.pid}"} 1`));
+
+    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",status="200"'));
+    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",status="500"'));
   });
 });
