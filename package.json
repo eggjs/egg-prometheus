@@ -1,6 +1,6 @@
 {
   "name": "egg-prometheus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Prometheus plugin for Egg.js",
   "main": "app.js",
   "eggPlugin": {
