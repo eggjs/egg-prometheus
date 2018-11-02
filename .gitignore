@@ -65,3 +65,4 @@ test/fixtures/apps/**/app/public
 test/fixtures/apps/**/app/proxy
 test/fixtures/apps/**/run
 test/fixtures/apps/**/logs
+test/fixtures/apps/**/app/proxy_class/

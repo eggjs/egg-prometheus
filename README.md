@@ -61,17 +61,17 @@ exports.prometheus = {
 - `http_response_time_ms summary`: ms to handle a request
 - `http_request_rate counter`: number of requests to a route
 
-while egg-sofa-rpc is enabled
-- `sofa_rpc_consumer_response_time_ms summary`: ms of rpc time consuming
-- `sofa_rpc_consumer_request_rate counter`: number of rpc calls
-- `sofa_rpc_consumer_fail_response_time_ms summary`: ms of fail rpc time consuming
-- `sofa_rpc_consumer_request_fail_rate counter`: number of fail rpc calls
-- `sofa_rpc_consumer_request_size_bytes summary`: rpc request size in bytes
-- `sofa_rpc_consumer_response_size_bytes summary`: rpc response size in bytes
-- `sofa_rpc_provider_response_time_ms summary`: ms of request processed time
-- `sofa_rpc_provider_request_rate counter`: number of rpc calls
-- `sofa_rpc_provider_fail_response_time_ms summary`: ms of fail request processed time
-- `sofa_rpc_provider_request_fail_rate counter`: number of fail rpc calls
+while egg-rpc-base is enabled
+- `rpc_consumer_response_time_ms summary`: ms of rpc time consuming
+- `rpc_consumer_request_rate counter`: number of rpc calls
+- `rpc_consumer_fail_response_time_ms summary`: ms of fail rpc time consuming
+- `rpc_consumer_request_fail_rate counter`: number of fail rpc calls
+- `rpc_consumer_request_size_bytes summary`: rpc request size in bytes
+- `rpc_consumer_response_size_bytes summary`: rpc response size in bytes
+- `rpc_provider_response_time_ms summary`: ms of request processed time
+- `rpc_provider_request_rate counter`: number of rpc calls
+- `rpc_provider_fail_response_time_ms summary`: ms of fail request processed time
+- `rpc_provider_request_fail_rate counter`: number of fail rpc calls
 
 ## Custom Metrics
 
