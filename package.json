@@ -6,7 +6,7 @@
   "eggPlugin": {
     "name": "prometheus",
     "optionalDependencies": [
-      "sofaRpc"
+      "rpc"
     ]
   },
   "files": [
@@ -47,15 +47,15 @@
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
-    "egg": "^2.11.2",
+    "egg": "^2.12.0",
     "egg-bin": "^4.9.0",
     "egg-mock": "^3.20.1",
-    "egg-rpc-generator": "^1.0.0",
-    "egg-sofa-rpc": "^1.0.1",
-    "eslint": "^5.6.1",
+    "egg-rpc-base": "^1.1.0",
+    "egg-rpc-generator": "^1.1.0",
+    "eslint": "^5.8.0",
     "eslint-config-egg": "^7.1.0",
     "mz-modules": "^2.1.0",
-    "urllib": "^2.30.0",
+    "urllib": "^2.31.1",
     "webstorm-disable-index": "^1.2.0"
   }
 }

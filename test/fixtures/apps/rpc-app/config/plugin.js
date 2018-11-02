@@ -1,6 +1,6 @@
 'use strict';
 
-exports.sofaRpc = {
+exports.rpc = {
   enable: true,
-  package: 'egg-sofa-rpc',
+  package: 'egg-rpc-base',
 };

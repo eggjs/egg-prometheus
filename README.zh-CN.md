@@ -60,17 +60,17 @@ exports.prometheus = {
 - `http_response_time_ms summary`: http 请求耗时
 - `http_request_rate counter`: http 请求数
 
-当 egg-sofa-rpc 插件开启时，还会提供下面 metrics
-- `sofa_rpc_consumer_response_time_ms summary`: rpc 客户端请求耗时
-- `sofa_rpc_consumer_request_rate counter`: rpc 客户端请求数
-- `sofa_rpc_consumer_fail_response_time_ms summary`: rpc 客户端失败的请求耗时
-- `sofa_rpc_consumer_request_fail_rate counter`: rpc 客户端失败的请求数
-- `sofa_rpc_consumer_request_size_bytes summary`: rpc 请求大小统计
-- `sofa_rpc_consumer_response_size_bytes summary`: rpc 响应大小统计
-- `sofa_rpc_provider_response_time_ms summary`: rpc 服务端处理时间
-- `sofa_rpc_provider_request_rate counter`: rpc 服务端收到请求数
-- `sofa_rpc_provider_fail_response_time_ms summary`: rpc 服务端失败的请求处理时间
-- `sofa_rpc_provider_request_fail_rate counter`: rpc 服务端失败的请求数
+当 egg-rpc-base 插件开启时，还会提供下面 metrics
+- `rpc_consumer_response_time_ms summary`: rpc 客户端请求耗时
+- `rpc_consumer_request_rate counter`: rpc 客户端请求数
+- `rpc_consumer_fail_response_time_ms summary`: rpc 客户端失败的请求耗时
+- `rpc_consumer_request_fail_rate counter`: rpc 客户端失败的请求数
+- `rpc_consumer_request_size_bytes summary`: rpc 请求大小统计
+- `rpc_consumer_response_size_bytes summary`: rpc 响应大小统计
+- `rpc_provider_response_time_ms summary`: rpc 服务端处理时间
+- `rpc_provider_request_rate counter`: rpc 服务端收到请求数
+- `rpc_provider_fail_response_time_ms summary`: rpc 服务端失败的请求处理时间
+- `rpc_provider_request_fail_rate counter`: rpc 服务端失败的请求数
 
 ## 自定义 Metrics
 
