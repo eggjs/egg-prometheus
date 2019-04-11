@@ -16,6 +16,11 @@ describe('test/http.test.js', () => {
     await app.close();
   });
 
+  it('should has ctx.prometheus', () => {
+    const ctx = app.createAnonymousContext();
+    assert(ctx.prometheus);
+  });
+
   it('should record only http server metrics', async function() {
     await app.httpRequest()
       .get('/')
