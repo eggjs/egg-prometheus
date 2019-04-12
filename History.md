@@ -1,4 +1,10 @@
 
+1.1.0 / 2019-04-13
+==================
+
+**features**
+  * [[`03e565a`](http://github.com/eggjs/egg-prometheus/commit/03e565ab955a46071a7d12f56fb214a7e7dafa59)] - feat: support cluster mode (#5) (zōng yǔ <<gxcsoccer@users.noreply.github.com>>)
+
 1.0.2 / 2018-11-03
 ==================
 
