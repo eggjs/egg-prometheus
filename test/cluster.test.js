@@ -31,16 +31,21 @@ describe('test/http.test.js', () => {
 
       assert(metricsStr.includes('TYPE http_response_time_ms summary'));
       assert(metricsStr.includes('TYPE http_request_rate counter'));
+      assert(metricsStr.includes('TYPE http_request_total counter'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_response_time_ms summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_request_rate counter'));
+      assert(!metricsStr.includes('TYPE sofa_rpc_consumer_request_total counter'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_fail_response_time_ms summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_request_fail_rate counter'));
+      assert(!metricsStr.includes('TYPE sofa_rpc_consumer_request_fail_total counter'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_request_size_bytes summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_consumer_response_size_bytes summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_response_time_ms summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_rate counter'));
+      assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_total counter'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_fail_response_time_ms summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_rate counter'));
+      assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_total counter'));
     });
   });
 
@@ -71,16 +76,21 @@ describe('test/http.test.js', () => {
 
       assert(metricsStr.includes('TYPE http_response_time_ms summary'));
       assert(metricsStr.includes('TYPE http_request_rate counter'));
+      assert(metricsStr.includes('TYPE http_request_total counter'));
       assert(metricsStr.includes('TYPE rpc_consumer_response_time_ms summary'));
       assert(metricsStr.includes('TYPE rpc_consumer_request_rate counter'));
+      assert(metricsStr.includes('TYPE rpc_consumer_request_total counter'));
       assert(metricsStr.includes('TYPE rpc_consumer_fail_response_time_ms summary'));
       assert(metricsStr.includes('TYPE rpc_consumer_request_fail_rate counter'));
+      assert(metricsStr.includes('TYPE rpc_consumer_request_fail_total counter'));
       assert(metricsStr.includes('TYPE rpc_consumer_request_size_bytes summary'));
       assert(metricsStr.includes('TYPE rpc_consumer_response_size_bytes summary'));
       assert(metricsStr.includes('TYPE rpc_provider_response_time_ms summary'));
       assert(metricsStr.includes('TYPE rpc_provider_request_rate counter'));
+      assert(metricsStr.includes('TYPE rpc_provider_request_total counter'));
       assert(metricsStr.includes('TYPE rpc_provider_fail_response_time_ms summary'));
       assert(metricsStr.includes('TYPE rpc_provider_request_fail_rate counter'));
+      assert(metricsStr.includes('TYPE rpc_provider_request_fail_total counter'));
 
       res = await urllib.curl('http://127.0.0.1:3000/metric');
       assert(res && res.status === 404);
