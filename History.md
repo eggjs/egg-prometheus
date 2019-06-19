@@ -1,4 +1,10 @@
 
+1.2.0 / 2019-06-19
+==================
+
+**features**
+  * [[`7cba8f8`](http://github.com/eggjs/egg-prometheus/commit/7cba8f88fe2e93aade5e25fffc29730ff4b811f0)] - feat: Add new request_total metrics (#6) (AngrySean <<xujihui1985@gmail.com>>)
+
 1.1.0 / 2019-04-13
 ==================
 
