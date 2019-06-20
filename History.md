@@ -1,4 +1,10 @@
 
+1.3.0 / 2019-06-20
+==================
+
+**features**
+  * [[`6e8e59f`](http://github.com/eggjs/egg-prometheus/commit/6e8e59f8d068bc4a766e8df988a94b01f44d99e5)] - feat: add matchedRoute label to http server metrics (#8) (zōng yǔ <<gxcsoccer@users.noreply.github.com>>)
+
 1.2.0 / 2019-06-19
 ==================
 
