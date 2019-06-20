@@ -49,4 +49,20 @@ describe('test/http.test.js', () => {
     assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_rate counter'));
     assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_total counter'));
   });
+
+  it('should process restful path', async () => {
+    await app.httpRequest()
+      .get('/api/v1/users/123')
+      .expect(200)
+      .expect('user_123');
+
+    const res = await urllib.curl('http://127.0.0.1:3000/metrics');
+    assert(res && res.status === 200);
+    const metricsStr = res.data.toString();
+    console.log(metricsStr);
+
+    assert(metricsStr.includes('path="/api/v1/users/123"'));
+    assert(metricsStr.includes('routerName="user"'));
+    assert(metricsStr.includes('matchedRoute="/api/v1/users/:id"'));
+  });
 });
