@@ -1,7 +1,9 @@
 'use strict';
 
 module.exports = app => {
-  app.get('/', async function(ctx) {
+  const { router, controller } = app;
+  router.get('/', async function(ctx) {
     ctx.body = 'ok';
   });
+  router.resources('users', '/api/v1/users', controller.users);
 };
