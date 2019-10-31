@@ -1,4 +1,10 @@
 
+1.4.0 / 2019-11-01
+==================
+
+**features**
+  * [[`064b5a9`](http://github.com/eggjs/egg-prometheus/commit/064b5a9284262e4fb88145ebf43d098853977073)] - feat: add enableDefaultMetrics config (#9) (Haoliang Gao <<sakura9515@gmail.com>>)
+
 1.3.0 / 2019-06-20
 ==================
 
