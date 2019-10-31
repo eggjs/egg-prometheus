@@ -6,9 +6,11 @@ const rpcServerMetrics = require('./lib/metrics/rpc_server');
 const httpServerMetrics = require('./lib/metrics/http_server');
 
 module.exports = app => {
-  rpcClientMetrics(app);
-  rpcServerMetrics(app);
-  httpServerMetrics(app);
+  if (app.config.prometheus.enableDefaultMetrics === true) {
+    rpcClientMetrics(app);
+    rpcServerMetrics(app);
+    httpServerMetrics(app);
+  }
 
   const worker = new PrometheusWorker(app);
   app.beforeStart(async () => {
