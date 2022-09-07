@@ -6,5 +6,5 @@ exports.prometheus = {
   aggregatorPort: 6789,
   enableDefaultMetrics: true,
   timeout: 3000,
-  defaultMetricsFilter: () => true,
+  defaultHttpMetricsFilter: () => true,
 };
