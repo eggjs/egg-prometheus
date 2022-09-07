@@ -1,4 +1,5 @@
 # egg-prometheus
+
 Prometheus plugin for egg framework
 
 [![NPM version][npm-image]][npm-url]
@@ -38,7 +39,7 @@ Change `${app_root}/config/plugin.js` to enable Prometheus plugin:
 ```js
 exports.prometheus = {
   enable: true,
-  package: 'egg-prometheus',
+  package: "egg-prometheus",
 };
 ```
 
@@ -46,15 +47,19 @@ exports.prometheus = {
 
 ```js
 exports.prometheus = {
+  timeout: 3000
   scrapePort: 3000,
   scrapePath: '/metrics',
+  defaultHttpMetricsFilter: ({ method, status, routerName, path }) => true,
   defaultLabels: { ... },
 };
 ```
 
+- `timeout`: metrics pull timeout
 - `scrapePort`: the port to scrape metrics from
 - `scrapePath`: the path to scrape metrics from
 - `defaultLabels`: static labels may be applied to every metric emitted by a registry
+- `defaultHttpMetricsFilter`: can custom filter default http metrics, return false can prevent metrics
 
 ## Default Metrics
 
@@ -62,6 +67,7 @@ exports.prometheus = {
 - `http_request_rate counter`: number of requests to a route
 
 while egg-rpc-base is enabled
+
 - `rpc_consumer_response_time_ms summary`: ms of rpc time consuming
 - `rpc_consumer_request_rate counter`: number of rpc calls
 - `rpc_consumer_fail_response_time_ms summary`: ms of fail rpc time consuming
@@ -77,27 +83,27 @@ while egg-rpc-base is enabled
 
 ```js
 const counter = new app.prometheus.Counter({
-  name: 'xxx_total',
-  help: 'custom counter',
-  labelNames: [ 'xxx' ],
+  name: "xxx_total",
+  help: "custom counter",
+  labelNames: ["xxx"],
 });
 
 const gauge = new app.prometheus.Gauge({
-  name: 'xxx_gauge',
-  help: 'custom gauge',
-  labelNames: [ 'xxx' ],
+  name: "xxx_gauge",
+  help: "custom gauge",
+  labelNames: ["xxx"],
 });
 
 const histogram = new app.prometheus.Histogram({
-  name: 'xxx_histogram',
-  help: 'custom histogram',
-  labelNames: [ 'xxx' ],
+  name: "xxx_histogram",
+  help: "custom histogram",
+  labelNames: ["xxx"],
 });
 
 const summary = new app.prometheus.Summary({
-  name: 'xxx_summary',
-  help: 'custom summary',
-  labelNames: [ 'xxx' ],
+  name: "xxx_summary",
+  help: "custom summary",
+  labelNames: ["xxx"],
 });
 ```
 
