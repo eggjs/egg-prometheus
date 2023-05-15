@@ -5,7 +5,7 @@ const assert = require('assert');
 const urllib = require('urllib');
 const sleep = require('mz-modules/sleep');
 
-describe('test/http.test.js', () => {
+describe('test/cluster.test.js', () => {
   let app;
 
   describe('http', () => {
@@ -46,6 +46,34 @@ describe('test/http.test.js', () => {
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_fail_response_time_ms summary'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_rate counter'));
       assert(!metricsStr.includes('TYPE sofa_rpc_provider_request_fail_total counter'));
+    });
+  });
+
+  describe('worker_threads http', () => {
+    before(async function() {
+      app = mm.cluster({
+        baseDir: 'apps/http-app',
+        startMode: 'worker_threads',
+      });
+      await app.ready();
+    });
+    after(async function() {
+      await app.close();
+    });
+
+    it('should record metrics ok', async function() {
+      await app.httpRequest()
+        .get('/')
+        .expect('ok');
+
+      const res = await urllib.curl('http://127.0.0.1:3000/metrics');
+      assert(res && res.status === 200);
+      const metricsStr = res.data.toString();
+      console.log(metricsStr);
+
+      assert(metricsStr.includes('TYPE http_response_time_ms summary'));
+      assert(metricsStr.includes('TYPE http_request_rate counter'));
+      assert(metricsStr.includes('TYPE http_request_total counter'));
     });
   });
 
