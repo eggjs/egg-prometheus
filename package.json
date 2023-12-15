@@ -1,6 +1,6 @@
 {
   "name": "egg-prometheus",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Prometheus plugin for Egg.js",
   "main": "app.js",
   "eggPlugin": {
@@ -14,9 +14,11 @@
     "lib",
     "app",
     "config",
-    "agent.js"
+    "agent.js",
+    "index.d.ts"
   ],
   "scripts": {
+    "contributor": "git-contributor",
     "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "sh test/init.sh && TEST_TIMEOUT=10000 egg-bin cov",
@@ -62,6 +64,7 @@
     "egg-rpc-generator": "^1.3.1",
     "eslint": "^5.16.0",
     "eslint-config-egg": "^7.4.1",
+    "git-contributor": "^2.1.5",
     "pedding": "^1.1.0",
     "urllib": "^2.34.0",
     "webstorm-disable-index": "^1.2.0"

@@ -1,4 +1,13 @@
 
+1.6.0 / 2023-12-15
+==================
+
+**features**
+  * [[`85c8fb4`](http://github.com/eggjs/egg-prometheus/commit/85c8fb4bc95d3863e730a9712f42b48fc3e6ea5d)] - feat: dts define (#17) (Ink <<chceyes@gmail.com>>)
+
+**others**
+  * [[`fffc628`](http://github.com/eggjs/egg-prometheus/commit/fffc628e35510eb4ff622dd659e6e7ab75b02de6)] - chore: bump to 1.5.0 (gxcsoccer <<gxcsoccer@gmail.com>>),
+
 1.4.0 / 2019-11-01
 ==================
 

@@ -116,3 +116,15 @@ const summary = new app.prometheus.Summary({
 ## License
 
 [MIT](LICENSE)
+
+<!-- GITCONTRIBUTOR_START -->
+
+## Contributors
+
+|[<img src="https://avatars.githubusercontent.com/u/1207064?v=4" width="100px;"/><br/><sub><b>gxcsoccer</b></sub>](https://github.com/gxcsoccer)<br/>|[<img src="https://avatars.githubusercontent.com/u/1619030?v=4" width="100px;"/><br/><sub><b>xujihui1985</b></sub>](https://github.com/xujihui1985)<br/>|[<img src="https://avatars.githubusercontent.com/u/360661?v=4" width="100px;"/><br/><sub><b>popomore</b></sub>](https://github.com/popomore)<br/>|[<img src="https://avatars.githubusercontent.com/u/2972143?v=4" width="100px;"/><br/><sub><b>nightink</b></sub>](https://github.com/nightink)<br/>|[<img src="https://avatars.githubusercontent.com/u/7581901?v=4" width="100px;"/><br/><sub><b>sjfkai</b></sub>](https://github.com/sjfkai)<br/>|[<img src="https://avatars.githubusercontent.com/u/26036163?v=4" width="100px;"/><br/><sub><b>jgchenu</b></sub>](https://github.com/jgchenu)<br/>|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Fri Dec 15 2023 17:58:23 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->
