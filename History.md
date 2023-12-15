@@ -1,4 +1,10 @@
 
+1.6.1 / 2023-12-15
+==================
+
+**fixes**
+  * [[`a754bdc`](http://github.com/eggjs/egg-prometheus/commit/a754bdc0b56df7fd7f17c9d82fe23de8ec8b5a42)] - fix: label names (#15) (光光 <<jgchenu@foxmail.com>>)
+
 1.6.0 / 2023-12-15
 ==================
 
