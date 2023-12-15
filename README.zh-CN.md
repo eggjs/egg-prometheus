@@ -25,7 +25,7 @@
 ## 安装
 
 ```bash
-$ npm i egg-prometheus --save
+npm i egg-prometheus --save
 ```
 
 ## 用法
@@ -45,7 +45,7 @@ exports.prometheus = {
 
 ```js
 exports.prometheus = {
-  timeout: 3000
+  timeout: 3000,
   scrapePort: 3000,
   scrapePath: '/metrics',
   defaultHttpMetricsFilter: ({ method, status, routerName, path }) => true,

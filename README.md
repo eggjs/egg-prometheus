@@ -27,7 +27,7 @@ Prometheus plugin for egg framework
 ## Install
 
 ```bash
-$ npm i egg-prometheus --save
+npm i egg-prometheus --save
 ```
 
 ## Usage
@@ -47,7 +47,7 @@ exports.prometheus = {
 
 ```js
 exports.prometheus = {
-  timeout: 3000
+  timeout: 3000,
   scrapePort: 3000,
   scrapePath: '/metrics',
   defaultHttpMetricsFilter: ({ method, status, routerName, path }) => true,
