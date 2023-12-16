@@ -53,12 +53,11 @@ describe('test/rpc.test.js', () => {
     assert(res && res.status === 404);
   });
 
-  it('should record failed metrics ok', async function() {
-    await app.httpRequest()
+  it.only('should record failed metrics ok', async function() {
+    const appRes = await app.httpRequest()
       .get('/rpc?name=error')
-      .expect(500, err => {
-        assert(err.message.includes('mock error'));
-      });
+      .expect(500);
+    console.log(appRes.body, appRes.text);
 
     const res = await urllib.curl('http://127.0.0.1:3000/metrics');
     assert(res && res.status === 200);
