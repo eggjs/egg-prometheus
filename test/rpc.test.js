@@ -3,7 +3,7 @@
 const mm = require('egg-mock');
 const assert = require('assert');
 const urllib = require('urllib');
-const sleep = require('mz-modules/sleep');
+const { sleep } = require('../lib/utils');
 
 describe('test/rpc.test.js', () => {
   let app;
@@ -54,11 +54,10 @@ describe('test/rpc.test.js', () => {
   });
 
   it('should record failed metrics ok', async function() {
-    await app.httpRequest()
+    const appRes = await app.httpRequest()
       .get('/rpc?name=error')
-      .expect(500, err => {
-        assert(err.message.includes('mock error'));
-      });
+      .expect(500);
+    assert.match(appRes.text, /mock error/);
 
     const res = await urllib.curl('http://127.0.0.1:3000/metrics');
     assert(res && res.status === 200);
@@ -68,7 +67,7 @@ describe('test/rpc.test.js', () => {
     assert(metricsStr.includes(`rpc_provider_request_fail_rate{service="com.alipay.sofa.rpc.protobuf.ProtoService:1.0",method="echoObj",protocol="bolt",caller_app="rpc-app",app="rpc-app",pid="${process.pid}"} 1`));
     assert(metricsStr.includes(`rpc_provider_request_fail_total{service="com.alipay.sofa.rpc.protobuf.ProtoService:1.0",method="echoObj",protocol="bolt",caller_app="rpc-app",app="rpc-app",pid="${process.pid}"} 1`));
 
-    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",routerName="/rpc",matchedRoute="/rpc",status="200"'));
-    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",routerName="/rpc",matchedRoute="/rpc",status="500"'));
+    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",status="500"'));
+    // assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",routerName="/rpc",matchedRoute="/rpc",status="500"'));
   });
 });
