@@ -3,7 +3,7 @@
 const mm = require('egg-mock');
 const assert = require('assert');
 const urllib = require('urllib');
-const sleep = require('mz-modules/sleep');
+const { sleep } = require('../lib/utils');
 
 describe('test/rpc.test.js', () => {
   let app;
