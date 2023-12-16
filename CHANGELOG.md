@@ -1,3 +1,11 @@
+# Changelog
+
+## [1.7.0](https://github.com/eggjs/egg-prometheus/compare/v1.6.1...v1.7.0) (2023-12-16)
+
+
+### Features
+
+* remove mz-modules deps ([#18](https://github.com/eggjs/egg-prometheus/issues/18)) ([ccd8901](https://github.com/eggjs/egg-prometheus/commit/ccd89013163b6d5f18f9d12c222a9961bea05e60))
 
 1.6.1 / 2023-12-15
 ==================
@@ -55,4 +63,3 @@
 
 **others**
 ,fatal: 没有发现名称，无法描述任何东西。
-
