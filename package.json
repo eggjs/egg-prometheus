@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "await-event": "^2.1.0",
+    "colors": "^1.4.0",
     "egg": "^3.16.0",
     "egg-bin": "^6.4.0",
     "egg-mock": "^5.10.6",
