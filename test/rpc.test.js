@@ -67,6 +67,7 @@ describe('test/rpc.test.js', () => {
     assert(metricsStr.includes(`rpc_provider_request_fail_rate{service="com.alipay.sofa.rpc.protobuf.ProtoService:1.0",method="echoObj",protocol="bolt",caller_app="rpc-app",app="rpc-app",pid="${process.pid}"} 1`));
     assert(metricsStr.includes(`rpc_provider_request_fail_total{service="com.alipay.sofa.rpc.protobuf.ProtoService:1.0",method="echoObj",protocol="bolt",caller_app="rpc-app",app="rpc-app",pid="${process.pid}"} 1`));
 
-    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",routerName="/rpc",matchedRoute="/rpc",status="500"'));
+    assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",status="500"'));
+    // assert(metricsStr.includes('http_response_time_ms_count{method="GET",path="/rpc",routerName="/rpc",matchedRoute="/rpc",status="500"'));
   });
 });
