@@ -85,8 +85,8 @@ const counter = new app.prometheus.Counter({
   labelNames: ["from"],
 });
 // To use the from label, we do as the following.
-counter.labels({ from: 'google_com' }).inc();
-counter.labels({ from: 'facebook_com' }).inc();
+counter.labels(['google_com']).inc();
+counter.labels(['facebook_com']).inc();
 
 // Gauge
 const gauge = new app.prometheus.Gauge({
