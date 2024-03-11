@@ -3,6 +3,7 @@
   "version": "1.7.0",
   "description": "Prometheus plugin for Egg.js",
   "main": "app.js",
+  "types": "index.d.ts",
   "eggPlugin": {
     "name": "prometheus",
     "optionalDependencies": [
