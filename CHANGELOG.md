@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.1](https://github.com/eggjs/egg-prometheus/compare/v1.7.0...v1.7.1) (2024-03-12)
+
+
+### Bug Fixes
+
+* types & docs ([#19](https://github.com/eggjs/egg-prometheus/issues/19)) ([b79a1e3](https://github.com/eggjs/egg-prometheus/commit/b79a1e3d15e51cd566efef4ce4d710a51b8f3ac9))
+
 ## [1.7.0](https://github.com/eggjs/egg-prometheus/compare/v1.6.1...v1.7.0) (2023-12-16)
 
 
