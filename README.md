@@ -39,7 +39,7 @@ exports.prometheus = {
 
 ```js
 exports.prometheus = {
-  timeout: 3000,
+  timeout: 5000,
   scrapePort: 3000,
   scrapePath: '/metrics',
   defaultHttpMetricsFilter: ({ method, status, routerName, path }) => true,
@@ -74,24 +74,35 @@ while egg-rpc-base is enabled
 ## Custom Metrics
 
 ```js
+// Here's an example senario:
+// Some metric called 'pv' stands for 'page view'
+// We are going to know its total count.
+// To ensure that we know the pv of each visit source
+// We define a label called from.
 const counter = new app.prometheus.Counter({
-  name: "xxx_total",
+  name: "pv_total",
   help: "custom counter",
-  labelNames: ["xxx"],
+  labelNames: ["from"],
 });
+// To use the from label, we do as the following.
+counter.labels(['google_com']).inc();
+counter.labels(['facebook_com']).inc();
 
+// Gauge
 const gauge = new app.prometheus.Gauge({
   name: "xxx_gauge",
   help: "custom gauge",
   labelNames: ["xxx"],
 });
 
+// Histogram
 const histogram = new app.prometheus.Histogram({
   name: "xxx_histogram",
   help: "custom histogram",
   labelNames: ["xxx"],
 });
 
+// Summary
 const summary = new app.prometheus.Summary({
   name: "xxx_summary",
   help: "custom summary",
